@@ -24,12 +24,12 @@
 
     <!-- Responsive Sleek Floating Pill Navbar -->
     <nav class="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[92%] sm:w-[85%] max-w-5xl z-50 py-2 px-4 sm:px-6 rounded-full bg-black border border-white/20 flex items-center justify-between shadow-2xl backdrop-blur-md">
-        <!-- Transparent Logo (No outline) -->
+        <!-- Logo -->
         <a href="#hero" class="flex items-center">
             <img src="logo.png" alt="DEQUDZ Logo" class="h-6 sm:h-7 object-contain">
         </a>
         
-        <!-- Navigation Links (Hidden on small screens) -->
+        <!-- Navigation Links -->
         <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium text-gray-300">
             <a href="#hero" class="hover:text-white transition">Home</a>
             <a href="#about" class="hover:text-white transition">About</a>
@@ -43,7 +43,7 @@
         </a>
     </nav>
 
-    <!-- Hero Section with Background Video & Upper Shifted Compact Headline -->
+    <!-- Hero Section with Background Video -->
     <section id="hero" class="relative w-full h-screen overflow-hidden flex flex-col justify-start pt-28 sm:pt-40 items-center text-center px-4">
         <!-- Video Background -->
         <video src="g.mp4" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0"></video>
@@ -80,7 +80,7 @@
                     At DEQUDZ, we build blazing-fast static architectures that eliminate database bloat, server vulnerabilities, and recurring monthly hosting bills.
                 </p>
                 <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                    Combined with bespoke UI design and integrated Gemini AI chatbots, your business gets a 24/7 conversion engine that costs $0 to host forever.
+                    Combined with bespoke UI design and integrated AI chatbots, your business gets a 24/7 conversion engine that costs $0 to host forever.
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4">
@@ -201,10 +201,10 @@
         DEQUDZ © 2026. All rights reserved.
     </footer>
 
-    <!-- Fixed Floating AI Widget Component (Anchored Above Button) -->
-    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
+    <!-- Fixed Floating AI Widget Component -->
+    <div class="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
         <!-- Chat Window Popup -->
-        <div id="dequChatWindow" class="hidden mb-3 w-[calc(100vw-2rem)] sm:w-80 md:w-96 max-w-[400px] h-[400px] bg-black border border-white/30 rounded-2xl flex-col shadow-2xl overflow-hidden backdrop-blur-xl">
+        <div id="dequChatWindow" class="hidden mb-3 w-[calc(100vw-1.5rem)] sm:w-80 md:w-96 max-w-[380px] h-[420px] bg-black/95 border border-white/30 rounded-2xl flex-col shadow-2xl overflow-hidden backdrop-blur-xl">
             <!-- Header -->
             <div class="p-3.5 border-b border-white/20 flex items-center justify-between bg-black">
                 <div class="flex items-center space-x-2.5">
@@ -212,24 +212,24 @@
                     <div>
                         <h4 class="text-xs font-bold text-white tracking-wider">DEQU AI</h4>
                         <span class="text-[9px] text-gray-400 flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Sales Agent
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Official AI Representative
                         </span>
                     </div>
                 </div>
-                <button id="closeChat" class="text-gray-400 hover:text-white text-sm p-1"><i class="fa-solid fa-xmark"></i></button>
+                <button id="closeChat" class="text-gray-400 hover:text-white text-base px-2 py-1"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
             <!-- Messages Container -->
             <div id="chatMessages" class="flex-1 p-3.5 overflow-y-auto space-y-3 text-xs font-sans flex flex-col">
                 <div class="bg-white/10 text-white p-2.5 rounded-xl max-w-[85%] border border-white/10 self-start">
-                    Assalam-o-Alaikum! Main **DEQU** hoon. Poochien apko kaun sa plan chahiaye ya apne business ke bare mein batayen!
+                    Assalam-o-Alaikum! Main **DEQU** hoon, DEQUDZ agency ka official AI assistant. Aap ke business ke liye website ya plan select karne mein main aap ki kya madad kar sakta hoon?
                 </div>
             </div>
             
             <!-- Input Area -->
             <div class="p-2.5 border-t border-white/20 flex items-center gap-2 bg-black">
                 <input type="text" id="userInput" placeholder="Type a message..." class="flex-1 bg-black border border-white/20 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-white">
-                <button id="sendBtn" class="bg-white text-black px-3 py-2 rounded-xl text-xs font-bold hover:bg-gray-200"><i class="fa-solid fa-paper-plane"></i></button>
+                <button id="sendBtn" class="bg-white text-black px-3.5 py-2 rounded-xl text-xs font-bold hover:bg-gray-200 transition"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
 
@@ -239,7 +239,7 @@
         </button>
     </div>
 
-    <!-- AI Chatbot Script (Gemini 3.5 Flash-Lite API Integration) -->
+    <!-- AI Chatbot Script (Official & Professional Logic) -->
     <script>
         const launcher = document.getElementById('dequLauncher');
         const chatWindow = document.getElementById('dequChatWindow');
@@ -248,7 +248,6 @@
         const userInput = document.getElementById('userInput');
         const chatMessages = document.getElementById('chatMessages');
 
-        // Toggle Chat Window
         launcher.addEventListener('click', () => {
             chatWindow.classList.toggle('hidden');
             chatWindow.classList.toggle('flex');
@@ -259,21 +258,32 @@
             chatWindow.classList.remove('flex');
         });
 
-        const GEMINI_API_KEY = "AQ.Ab8RN6KhyFH20R6DKiB2AqJGGFRb2axvXR0Cb-Qcq1U0omSn3w";
-        
-        // Short & Interactive System Prompt
-        const SYSTEM_PROMPT = `You are DEQU, the AI sales assistant for DEQUDZ agency.
-RULES:
-1. RESPONSES MUST BE VERY SHORT AND TO THE POINT (MAX 1 TO 2 SENTENCES). NEVER GIVE LONG PARAGRAPHS OR BULLET LISTS.
-2. Language: Friendly Roman Urdu / Urdu English.
-3. INTERACTIVE RECOMMENDATION FLOW:
-   - If user asks which plan/package is best, DO NOT list all plans. Ask first: "Aap ka business kis cheez ka hai?"
-   - Once user answers their business type: Give a direct 1-sentence recommendation. E.g., "Aap ke liye PKR [4,000 / 7,000 / 15,000] wala plan best hai, aankhein band karke yeh choose kar lein!"
-4. AGENCY DATA:
-   - Plans: PKR 4,000 (Basic 1-page), PKR 7,000 (Premium Landing), PKR 15,000 (Full CMS with Admin Control).
-   - Contact/WhatsApp: 03056537766.
-   - Hosting: 0 PKR monthly fees, high speed static sites.
-5. If user asks anything unrelated to web design or DEQUDZ, reply: "Main sirf DEQUDZ agency aur hamare packages ke baare mein info de sakta hoon."`;
+        const GROQ_API_KEY = "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"; 
+        const GROQ_MODEL = "llama-3.3-70b-versatile";
+
+        const SYSTEM_PROMPT = `You are DEQU, the official AI Assistant for DEQUDZ digital agency.
+
+ROLE & BEHAVIOR RULES:
+- Professional, respectful, clear, and helpful.
+- Speak in clean Roman Urdu / Urdu English.
+- STRICTLY AVOID being over-casual, slangy, or using excessive emojis. Keep tone formal yet approachable.
+- ALWAYS maintain conversation memory. Do NOT ask questions that the user has already answered.
+
+CONVERSATION & SALES LOGIC:
+1. When user asks "kon sa plan best hai?" or inquires about packages:
+   - Ask them briefly: "Aap ka business kis category ka hai (e.g., Furniture, Academy, Shop, Services)?" so you can recommend the exact right plan.
+   - Or present the options clearly:
+     • PKR 4,000 (Low-End Business: Single Page)
+     • PKR 7,000 (Small Business: Premium Multi-Section)
+     • PKR 15,000 (Complete Business: Full CMS Admin Panel)
+2. Mention core guarantees when relevant: 0 PKR Monthly Hosting Fee (Lifetime Free) & 0 PKR Advance Demo Guarantee.
+3. If user agrees or wants to proceed, guide them politely to WhatsApp: "Aap WhatsApp (03056537766) par contact kar sakte hain taakay hum demo aur requirements discuss kar lein."
+4. Keep responses concise (2 to 3 sentences max).`;
+
+        // Active History Storage
+        let conversationHistory = [
+            { role: "system", content: SYSTEM_PROMPT }
+        ];
 
         async function sendMessage() {
             const text = userInput.value.trim();
@@ -287,39 +297,38 @@ RULES:
             userInput.value = '';
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Render Thinking State
+            conversationHistory.push({ role: "user", content: text });
+
+            // Render Typing State
             const loadingDiv = document.createElement('div');
             loadingDiv.className = 'bg-white/10 text-gray-400 p-2.5 rounded-xl max-w-[85%] text-xs italic border border-white/10 self-start';
-            loadingDiv.innerText = 'DEQU is typing...';
+            loadingDiv.innerText = 'DEQU is thinking...';
             chatMessages.appendChild(loadingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
             try {
-                // Endpoint set to gemini-3.5-flash-lite
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`, {
+                const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Authorization': `Bearer ${GROQ_API_KEY}`,
+                        'Content-Type': 'application/json' 
+                    },
                     body: JSON.stringify({
-                        contents: [
-                            {
-                                role: 'user',
-                                parts: [
-                                    { text: SYSTEM_PROMPT + "\n\nUser Question: " + text }
-                                ]
-                            }
-                        ]
+                        model: GROQ_MODEL,
+                        messages: conversationHistory,
+                        max_tokens: 150,
+                        temperature: 0.5
                     })
                 });
-                
+
                 const data = await response.json();
                 chatMessages.removeChild(loadingDiv);
 
-                let botReply = "Connection issue hai, thodi dair baad try karein ya WhatsApp karein: 03056537766.";
-                
-                if(data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0].text) {
-                    botReply = data.candidates[0].content.parts[0].text;
-                } else if(data.error) {
-                    console.error("API Error Details:", data.error);
+                let botReply = "Aap ki request process nahi ho saki. Baraye meharbani WhatsApp par rabta karein: 03056537766.";
+
+                if (data.choices && data.choices[0] && data.choices[0].message) {
+                    botReply = data.choices[0].message.content;
+                    conversationHistory.push({ role: "assistant", content: botReply });
                 }
 
                 const botDiv = document.createElement('div');
@@ -333,7 +342,7 @@ RULES:
                 chatMessages.removeChild(loadingDiv);
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'bg-white/10 text-white p-2.5 rounded-xl max-w-[85%] text-xs border border-white/10 self-start';
-                errorDiv.innerText = "Connection issue hai, thodi dair baad try karein ya WhatsApp karein: 03056537766.";
+                errorDiv.innerText = "Connection issue hai. Baraye meharbani WhatsApp par rabta karein: 03056537766.";
                 chatMessages.appendChild(errorDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
